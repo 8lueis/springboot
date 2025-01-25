@@ -1,0 +1,24 @@
+plugins {
+    id 'org.springframework.boot' version '3.1.0' // 스프링부트 플러그인
+    id 'io.spring.dependency-management' version '1.1.0'  // 스프링 의존성 자동 관리
+    id 'java'
+}
+
+group = 'khk'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral() // 의존성을 받을 저장소
+}
+
+dependencies {
+    // 기본 값을 지우고 웹 관련 기능을 제공하는 값으로 변경
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // 마찬가지로 테스트 기능을 제공하는 값으로 변경
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
